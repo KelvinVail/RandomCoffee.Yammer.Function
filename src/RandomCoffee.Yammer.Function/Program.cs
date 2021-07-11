@@ -1,19 +1,17 @@
-using Microsoft.Azure.Functions.Worker.Configuration;
-using Microsoft.Extensions.Configuration;
+﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
-using System.Threading.Tasks;
 
 namespace RandomCoffee.Yammer.Function
 {
     public class Program
     {
-        public static void Main()
+        public static async Task Main()
         {
             var host = new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults()
                 .Build();
 
-            host.Run();
+            await host.RunAsync();
         }
     }
 }
